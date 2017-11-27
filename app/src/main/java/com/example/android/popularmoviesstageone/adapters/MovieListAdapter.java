@@ -46,6 +46,11 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         mClickHandler = clickHandler;
     }
 
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
     public class MovieListAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public final ImageView mImageViewPoster;
