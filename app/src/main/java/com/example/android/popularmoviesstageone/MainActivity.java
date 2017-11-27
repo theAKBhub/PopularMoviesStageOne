@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     // TODO - add TMDb API Key
-    private static final String API_KEY = "2220f4fecad926324cab32a5df860aee";
+    private static final String API_KEY = "";
 
     private static final int GRID_VIEW_COLUMNS = 2;
 
