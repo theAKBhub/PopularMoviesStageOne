@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorBackground"
+    tools:context="com.example.android.popularmoviesstageone.DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/image_movie"
+            style="@style/DetailMovieImage"
+            android:contentDescription="@string/contentdesc_movie_poster"/>
+
+        <TextView
+            android:id="@+id/text_movie_title"
+            style="@style/DetailMovieTitle"
+            tools:context="@string/app_name"/>
+
+        <LinearLayout
+            style="@style/MovieDetailLayoutHolder">
+
+            <TextView
+                android:id="@+id/text_label_date"
+                style="@style/DetailMovieLabel"
+                android:text="@string/label_movie_date"/>
+
+            <TextView
+                android:id="@+id/text_movie_date"
+                style="@style/DetailMovieText"
+                tools:context="@string/app_name"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MovieDetailLayoutHolder">
+
+            <TextView
+                android:id="@+id/text_label_language"
+                style="@style/DetailMovieLabel"
+                android:text="@string/label_movie_language"/>
+
+            <TextView
+                android:id="@+id/text_movie_language"
+                style="@style/DetailMovieText"
+                tools:context="@string/app_name"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/MovieDetailLayoutHolder">
+
+            <TextView
+                android:id="@+id/text_label_genre"
+                style="@style/DetailMovieLabel"
+                android:text="@string/label_movie_genre"/>
+
+            <TextView
+                android:id="@+id/text_movie_genre"
+                style="@style/DetailMovieText"
+                tools:context="@string/app_name"/>
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/MovieDetailLayoutHolder">
+
+            <TextView
+                android:id="@+id/text_label_vote"
+                style="@style/DetailMovieLabel"
+                android:text="@string/label_movie_vote"/>
+
+            <TextView
+                android:id="@+id/text_movie_vote"
+                style="@style/DetailMovieText"
+                tools:context="@string/app_name"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_movie_overview"
+            style="@style/DetailMovieText"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:padding="@dimen/activity_margin"
+            tools:context="@string/app_name"/>
+
+    </LinearLayout>
+</ScrollView>

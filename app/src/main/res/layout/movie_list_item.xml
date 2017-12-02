@@ -9,8 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:background="@android:color/transparent"
         android:scaleType="fitCenter"
+        android:layout_marginLeft="@dimen/poster_holder_spacing"
+        android:layout_marginBottom="@dimen/poster_holder_spacing"
         android:contentDescription="@string/label_movie_image"/>
 
 </RelativeLayout>

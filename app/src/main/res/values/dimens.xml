@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="progressbar_dimen">42dp</dimen>
+    <dimen name="poster_holder_spacing">2dp</dimen>
+    <dimen name="movie_label_width">150dp</dimen>
+
+    <!-- Font Sizes -->
+    <dimen name="textsize_xsmall">14sp</dimen>
+    <dimen name="textsize_small">16sp</dimen>
+    <dimen name="textsize_medium">18sp</dimen>
+    <dimen name="textsize_large">20sp</dimen>
+    <dimen name="textsize_xlarge">24sp</dimen>
+    <dimen name="textsize_title">28sp</dimen>
+
+    <!-- Custom Dialog Dimensions -->
+    <dimen name="dialog_height">250dp</dimen>
+    <dimen name="dialog_title_padding">10dp</dimen>
+    <dimen name="dialog_message_margin_vertical">20dp</dimen>
+    <dimen name="dialog_divider_height">1dp</dimen>
+
+</resources>

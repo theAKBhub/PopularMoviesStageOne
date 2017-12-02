@@ -1,11 +1,125 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Splash Theme -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="SettingsTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorSettingsPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimaryInverse">@android:color/white</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/colorSettingsBackground</item>
+    </style>
+
+    <!-- ==========================  MainActivity Styles  ============================ -->
+    <style name="RecyclerView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/activity_margin</item>
+    </style>
+
+    <style name="ProgressBar">
+        <item name="android:layout_width">@dimen/progressbar_dimen</item>
+        <item name="android:layout_height">@dimen/progressbar_dimen</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <!-- =======================  Custom Dialog Styles  ============================ -->
+
+    <style name="TextViewDialogTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:padding">@dimen/dialog_title_padding</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:tag">@string/tag_regular_noto</item>
+    </style>
+
+    <style name="TextViewDialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">@dimen/dialog_title_padding</item>
+        <item name="android:paddingRight">@dimen/dialog_title_padding</item>
+        <item name="android:layout_marginTop">@dimen/dialog_message_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/dialog_message_margin_vertical</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/textsize_xsmall</item>
+        <item name="android:tag">@string/tag_regular_noto</item>
+    </style>
+
+    <style name="ButtonDialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:tag">@string/tag_regular_roboto_cond</item>
+    </style>
+
+    <!-- ==========================  DetailActivity Styles  ============================ -->
+
+    <style name="MovieDetailLayoutHolder">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/activity_margin</item>
+        <item name="android:paddingRight">@dimen/activity_margin</item>
+        <item name="android:paddingTop">@dimen/activity_margin</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="DetailMovieImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="DetailMovieImageLand">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="DetailMovieTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/textsize_title</item>
+        <item name="android:tag">@string/tag_light_roboto_cond</item>
+        <item name="android:padding">@dimen/activity_margin</item>
+    </style>
+
+    <style name="DetailMovieLabel">
+        <item name="android:layout_width">@dimen/movie_label_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:tag">@string/tag_regular_roboto_cond</item>
+    </style>
+
+    <style name="DetailMovieText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textSize">@dimen/textsize_small</item>
+        <item name="android:tag">@string/tag_regular_noto</item>
     </style>
 
 </resources>

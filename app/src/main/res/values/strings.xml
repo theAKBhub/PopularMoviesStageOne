@@ -1,9 +1,63 @@
 <resources>
     <string name="app_name">Popular Movies</string>
+    <string name="placeholder_dialog">Dialog</string>
+    <string name="title_load_error">Movie Load Error</string>
+
+    <!-- =======================    LABELS   ================================ -->
+
     <string name="label_movie_image">Movie Poster</string>
-    <string name="alert_api_key_missing">Oops! Looks like your API Key is missing</string>
+    <string name="label_movies">%s Movies</string>
+    <string name="label_movie_date">Release Date</string>
+    <string name="label_movie_language">Language</string>
+    <string name="label_movie_genre">Genre</string>
+    <string name="label_movie_vote">Average Vote</string>
+    <string name="label_ok">OK</string>
+    <string name="label_vote_display">%.1f / 10</string>
+
+
+    <!-- =======================    MESSAGES   ================================ -->
+
     <string name="error_movie_load">Failed to display popular movie list</string>
     <string name="error_movie_load_failed">Failed to load list of popular movies. Status Code \u003D </string>
     <string name="error_movie_fetch_failed">Failed to fetch list of popular movies</string>
     <string name="error_no_connection">Unfortunately your device doesn\u0027t have any internet connection.</string>
+    <string name="alert_api_key_missing">Oops! Looks like your API Key is missing</string>
+
+
+    <!-- =======================    SETTINGS   ================================ -->
+
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">Movie Settings</string>
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_sort_by_label">Sort By</string>
+    <string name="settings_sort_by_key" translatable="false">sort_by</string>
+    <string name="settings_sort_by_default" translatable="false">@string/settings_sort_by_popularity_value</string>
+
+    <!-- Label for sort-by Most Popular option [CHAR LIMIT=20] -->
+    <string name="settings_sort_by_popularity_label">Popular</string>
+    <string name="settings_sort_by_popularity_value" translatable="false">popular</string>
+
+    <!-- Label for sort-by Top Rated option [CHAR LIMIT=20] -->
+    <string name="settings_sort_by_rating_label">Top Rated</string>
+    <string name="settings_sort_by_rating_value" translatable="false">top_rated</string>
+
+    <!-- Label for sort-by Now Playing option [CHAR LIMIT=20] -->
+    <string name="settings_sort_by_nowplaying_label">Now Playing</string>
+    <string name="settings_sort_by_nowplaying_value" translatable="false">now_playing</string>
+
+    <!-- Label for sort-by Upcoming option [CHAR LIMIT=20] -->
+    <string name="settings_sort_by_upcoming_label">Upcoming</string>
+    <string name="settings_sort_by_upcoming_value" translatable="false">upcoming</string>
+    <string name="label_view_more">View More</string>
+    <string name="contentdesc_close_preview">Close Preview</string>
+    <string name="contentdesc_movie_poster">Movie Poster</string>
+
+
+    <!-- ===========================    View Font Tags    =========================== -->
+
+    <string name="tag_regular_roboto_cond">RegularRobotoCond</string>
+    <string name="tag_light_roboto_cond">LightRobotoCond</string>
+    <string name="tag_regular_noto">RegularNoto</string>
+
 </resources>

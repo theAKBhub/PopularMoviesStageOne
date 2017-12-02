@@ -2,8 +2,13 @@ package com.example.android.popularmoviesstageone.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.TextUtils;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A {@link Movie} object that contains details related to a single Movie item
@@ -11,6 +16,19 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Movie implements Parcelable {
+
+    private static final List<Integer> ARRAY_GENRE_IDS = Arrays.asList(
+            12, 14, 16, 18, 27, 28, 35, 36, 37,
+            53, 80, 99, 878, 9648, 10402, 10749,
+            10751, 10752, 10770
+    );
+
+    private static final String [] ARRAY_GENRES = new String[]{
+            "Adventure", "Fantasy", "Animation", "Drama", "Horror", "Action", "Comedy", "History", "Western",
+            "Thriller", "Crime", "Documentary", "Science Fiction", "Mystery", "Music", "Romance",
+            "Family", "War", "TV Movie"
+    };
+
 
     /**
      * {@link Movie} Attributes
@@ -50,6 +68,10 @@ public class Movie implements Parcelable {
     @SerializedName("backdrop_path")
     private String mMovieBackdropPath;
 
+    // Movie Genres
+    @SerializedName("genre_ids")
+    private int [] mMovieGenreIds;
+
 
     /**
      * Empty constructor
@@ -72,6 +94,7 @@ public class Movie implements Parcelable {
         mMovieOverview = parcel.readString();
         mMoviePosterPath = parcel.readString();
         mMovieBackdropPath = parcel.readString();
+        mMovieGenreIds = parcel.createIntArray();
     }
 
     /** Getter method - Movie ID */
@@ -154,6 +177,31 @@ public class Movie implements Parcelable {
         mMovieBackdropPath = movieBackdropPath;
     }
 
+    /** Getter method - Movie Genres */
+    public int[] getGenreIds() {
+        return mMovieGenreIds;
+    }
+
+    /** Setter method - Movie Backdrop Path */
+    public void setGenreIds(int [] genreIds) {
+        mMovieGenreIds = genreIds;
+    }
+
+    /** Getter method - Movie Genres (comma separated) **/
+    public String getGenres(int [] genreIds) {
+        List<String> genresList = new ArrayList<String>();
+        String genres; // list of genres separated by commas (Action, Comedy, Horror)
+        int index;
+
+        for (int id : genreIds) {
+            index = ARRAY_GENRE_IDS.indexOf(id);
+            if (index >= 0) {
+                genresList.add(ARRAY_GENRES[index]);
+            }
+        }
+        genres = TextUtils.join(", ", genresList);
+        return genres;
+    }
 
 
     @Override
@@ -171,6 +219,7 @@ public class Movie implements Parcelable {
         dest.writeString(mMovieOverview);
         dest.writeString(mMoviePosterPath);
         dest.writeString(mMovieBackdropPath);
+        dest.writeIntArray(mMovieGenreIds);
     }
 
     public static final Parcelable.Creator<Movie> CREATOR

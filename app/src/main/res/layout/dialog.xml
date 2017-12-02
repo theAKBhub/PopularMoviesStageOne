@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="@dimen/dialog_height"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBlackAlpha">
+
+    <TextView
+        android:id="@+id/text_dialog_title"
+        style="@style/TextViewDialogTitle"
+        android:text="@string/title_load_error"/>
+
+    <TextView
+        android:id="@+id/text_dialog_caption"
+        style="@style/TextViewDialog"
+        tools:text="@string/placeholder_dialog"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider_height"
+        android:background="@color/colorBackground"/>
+
+    <Button
+        android:id="@+id/button_dismiss_dialog"
+        style="@style/ButtonDialog"
+        android:text="@string/label_ok"/>
+
+</LinearLayout>

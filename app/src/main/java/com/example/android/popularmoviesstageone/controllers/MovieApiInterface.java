@@ -30,8 +30,9 @@ public interface MovieApiInterface {
     /**
      * Requests list of popular movies
      * @param apiKey - individual API key
-     * @return List of movies
+     * @return List of movies sorted by preference (popular or top rated)
      */
-    @GET("movie/popular")
-    Call<MovieResponse> getMovieList(@Query("api_key") String apiKey);
+    @GET("movie/{preference}")
+    Call<MovieResponse> getMovieList(@Path("preference") String preference, @Query("api_key") String apiKey);
+
 }

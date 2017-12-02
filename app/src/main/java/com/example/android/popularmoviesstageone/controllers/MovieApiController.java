@@ -3,7 +3,10 @@ package com.example.android.popularmoviesstageone.controllers;
 import android.content.Context;
 
 import com.example.android.popularmoviesstageone.exceptions.NoConnectivityException;
+import com.example.android.popularmoviesstageone.utils.BuildConfig;
 import com.example.android.popularmoviesstageone.utils.Utils;
+
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -19,9 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieApiController {
 
-    private static final String TMDB_BASE_URL = "http://api.themoviedb.org/3/";
     private static Retrofit mRetrofit = null;
-
 
     public static Retrofit getClient(Context context) throws NoConnectivityException {
 
@@ -37,11 +38,15 @@ public class MovieApiController {
             // Create HttpLoggingInterceptor object and set logging level
             HttpLoggingInterceptor httpLoggingInterceptor =  new HttpLoggingInterceptor();
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);  // BASIC prints request methods and response codes
+
+            // Couple OkhttpClient.Builder object with HttpLoggingInterceptor object,
+            // and set connection timeout duration
             okHttpClientBuilder.addInterceptor(httpLoggingInterceptor);
+            okHttpClientBuilder.connectTimeout(BuildConfig.DURATION_CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS);
 
             // Create Retrofit object and attach OkHttp client to it
             mRetrofit = new Retrofit.Builder()
-                    .baseUrl(TMDB_BASE_URL)
+                    .baseUrl(BuildConfig.TMDB_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClientBuilder.build())
                     .build();

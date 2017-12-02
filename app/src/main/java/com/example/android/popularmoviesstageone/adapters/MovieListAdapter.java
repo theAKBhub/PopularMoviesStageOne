@@ -2,7 +2,6 @@ package com.example.android.popularmoviesstageone.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +10,7 @@ import android.widget.ImageView;
 import com.example.android.popularmoviesstageone.R;
 import com.example.android.popularmoviesstageone.models.Movie;
 import com.example.android.popularmoviesstageone.models.MovieResponse;
+import com.example.android.popularmoviesstageone.utils.BuildConfig;
 import com.example.android.popularmoviesstageone.utils.Utils;
 import com.squareup.picasso.Picasso;
 
@@ -25,7 +25,6 @@ import java.util.List;
 
 public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MovieListAdapterViewHolder> {
 
-    private final static String MOVIE_POSTER_BASE_URL = "http://image.tmdb.org/t/p/w185/";
     private MovieResponse mMovieResponse;
     private List<Movie> mMovieList;
     private MovieListAdapterOnClickHandler mClickHandler;
@@ -53,11 +52,11 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
     public class MovieListAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public final ImageView mImageViewPoster;
+        private final ImageView mImageViewPoster;
 
-        public MovieListAdapterViewHolder(View view) {
+        private MovieListAdapterViewHolder(View view) {
             super(view);
-            mImageViewPoster = (ImageView) view.findViewById(R.id.image_movie_poster);
+            mImageViewPoster = view.findViewById(R.id.image_movie_poster);
             view.setOnClickListener(this);
         }
 
@@ -102,20 +101,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         String moviePoster = "";
         String moviePosterUrl = "";
 
-        /*if (getItemCount() <= 0 && position >= getItemCount()) {
-            return;
-        }*/
-
         if (position < getItemCount()) {
             Movie movie = mMovieResponse.getMovieList().get(position);
             moviePoster = movie.getPosterPath();
             if (!Utils.isEmptyString(moviePoster)) {
-                //movieListAdapterViewHolder.mImageViewPoster.setImageResource(R.mipmap.ic_launcher);
-                moviePosterUrl = MOVIE_POSTER_BASE_URL + moviePoster;
-                Log.d("XXX", moviePosterUrl);
+                moviePosterUrl = BuildConfig.MOVIE_POSTER_BASE_URL + moviePoster;
                 Picasso.with(mContext).load(moviePosterUrl).into(movieListAdapterViewHolder.mImageViewPoster);
             }
         }
+
     }
 
     /**
@@ -124,7 +118,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
      */
     @Override
     public int getItemCount() {
-        return (mMovieResponse == null) ? 0 : mMovieResponse.getTotalCount();
+        return (mMovieResponse == null) ? 0 : mMovieResponse.getMovieList().size();
     }
 
     /**

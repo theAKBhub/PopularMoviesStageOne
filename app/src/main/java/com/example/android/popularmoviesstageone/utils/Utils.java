@@ -1,9 +1,16 @@
 package com.example.android.popularmoviesstageone.utils;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.android.popularmoviesstageone.R;
+
+import java.util.Locale;
 
 /**
  * This class contains common methods
@@ -59,4 +66,48 @@ public class Utils {
         toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
         return toast;
     }
+
+
+    /**
+     * Method to set custom typeface to UI elements
+     */
+    public static void setCustomTypeface(Context context, View view) {
+        Typeface typefaceRegular = Typeface.createFromAsset(context.getAssets(),
+                "fonts/roboto_condensed_r.ttf");
+        Typeface typefaceThin = Typeface.createFromAsset(context.getAssets(),
+                "fonts/roboto_condensed_l.ttf");
+        Typeface typefaceRegularNoto = Typeface.createFromAsset(context.getAssets(),
+                "fonts/notosans_r.ttf");
+
+        // Get tag on the view
+        String viewTag = view.getTag().toString();
+
+        // Cast view to appropriate view element based on tag received and set typefaces
+        if (viewTag.equals(context.getString(R.string.tag_regular_roboto_cond))) {
+            TextView textView = (TextView) view;
+            textView.setTypeface(typefaceRegular);
+        } else if (viewTag.equals(context.getString(R.string.tag_light_roboto_cond))) {
+            TextView textView = (TextView) view;
+            textView.setTypeface(typefaceThin);
+        } else if (viewTag.equals(context.getString(R.string.tag_regular_noto))) {
+            TextView textView = (TextView) view;
+            textView.setTypeface(typefaceRegularNoto);
+        }
+    }
+
+    /**
+     * Method to convert ISO language codes to language names (e.g. en -> English, es -> Español)
+     * @param languageCode
+     * @return language name
+     */
+    public static String getLanguageName(String languageCode) {
+        String language;
+
+        Locale locale = new Locale(languageCode);
+        language = locale.getDisplayLanguage(locale);
+        language = language.substring(0, 1).toUpperCase() + language.substring(1);
+
+        return language;
+    }
+
 }
