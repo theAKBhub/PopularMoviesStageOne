@@ -12,6 +12,7 @@
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
+    <!-- Settings Theme -->
     <style name="SettingsTheme" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/colorSettingsPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
