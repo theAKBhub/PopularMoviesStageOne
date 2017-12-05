@@ -9,7 +9,7 @@ package com.example.android.popularmoviesstageone.utils;
 public class BuildConfig {
 
     // TODO - add TMDb API Key
-    public static final String API_KEY = "2220f4fecad926324cab32a5df860aee";
+    public static final String API_KEY = "";
 
     // Number of columns to be displayed in Portrait Orientation
     public static final int GRID_COLUMNS_PORTRAIT = 4;
